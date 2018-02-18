@@ -1,0 +1,28 @@
+{
+  "name": "kudrmichal/monolog",
+  "description": "Nette extension for monolog",
+  "authors": [
+    {
+      "name": "Michal Kudr",
+      "email": "kudrmichal@gmail.com"
+    }
+  ],
+  "config": {
+    "discard-changes": true,
+    "secure-http": true
+  },
+  "require": {
+    "nette/di": "2.3.*@dev",
+    "monolog/monolog": "~1.9",
+    "tracy/tracy": "~2.3"
+  },
+  "require-dev": {
+    "nette/tester": "~1.5",
+    "nette/application": "~2.3",
+    "nette/bootstrap": "~2.3"
+
+  },
+  "autoload": {
+    "classmap": ["src/"]
+  }
+}

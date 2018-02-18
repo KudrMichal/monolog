@@ -1,0 +1,30 @@
+monolog:
+	loggers:
+		default:
+			logAware: true
+			autowired: true
+			handlers:
+				- error
+				- test
+		test:
+			handlers:
+				- test
+			processors:
+				- blueScreen
+
+	handlers:
+		error:
+			class: Monolog\Handler\RotatingFileHandler
+			arguments:
+				- %appDir%/../log/errors/errors.log
+				- 31
+				- Monolog\Logger::WARNING
+		test:
+			class: Monolog\Handler\NullHandler
+			arguments:
+				- Monolog\Logger::NOTICE
+
+	processors:
+		blueScreen:
+			class: KudrMichal\Monolog\Processor\BlueScreenProcessor
+
