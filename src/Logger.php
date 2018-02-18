@@ -10,12 +10,8 @@ use Monolog;
  */
 class Logger extends Monolog\Logger
 {
-	public function __construct($name, $handlers = [], $processors = [])
-	{
-		parent::__construct($name, $handlers, $processors);
-	}
 
-	public function addRecord(int $level, $message, array $context = [])
+	public function addRecord(int $level, $message, array $context = []): bool
 	{
 		if ($message instanceof \Exception) {
 			$context['exception'] = $message;
